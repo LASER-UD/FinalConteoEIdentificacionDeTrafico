@@ -13,9 +13,11 @@ services:
       - .:/usr/src/app
 
   mongo: 
-    container_name: MongoDB
+    container_name: mongo
     image: mongo
     ports:
       - "6000:27017"
+    logging: 
+      driver: none
 
   
