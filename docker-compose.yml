@@ -1,16 +1,23 @@
 version: "3"
 
 services: 
-  web:
-    container_name: nodeServer
-    restart: always
-    build: .
-    ports:
-      - "3000:3000" 
-    links:
-      - mongo
+  interfaz-web:
+    build: ./webPage
     volumes:
-      - .:/usr/src/app
+      - ./webPage:/usr/src/app
+    ports:
+      - 3000:3000
+    depends_on: 
+      - "scriptfinal"
+
+  scriptfinal:
+    build: ./scriptService
+    volumes:
+      - ./scriptService:/usr/src/scriptservice
+    ports:
+      - 3500:3500
+    depends_on: 
+      - "mongo"
 
   mongo: 
     container_name: mongo
