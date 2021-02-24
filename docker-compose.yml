@@ -15,8 +15,13 @@ services:
     build: ./scriptService
     volumes:
       - ./scriptService:/usr/src/scriptService
+    devices:
+      - /dev/video0:/dev/video0
+      - /dev/bus/usb:/dev/bus/usb
+      - /tmp/.X11-unix:/tmp/.X11-unix      
     ports:
       - 3500:3500
+    privileged: true
     depends_on: 
       - mongo
 

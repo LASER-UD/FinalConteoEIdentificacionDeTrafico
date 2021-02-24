@@ -1,5 +1,5 @@
 imutils
-Flask
+flask
 tensorflow==2.4.0
 opencv-contrib-python==4.4.0.46
 dlib==19.21.1
