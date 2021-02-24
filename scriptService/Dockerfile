@@ -5,7 +5,7 @@ WORKDIR /usr/src/scriptService
 COPY . .
 EXPOSE 3500
 #Instalamos dependencias
-RUN apt-get update && apt-get -y install cmake protobuf-compiler
+RUN apt-get update && apt-get -y install cmake protobuf-compiler ffmpeg libsm6 libxext6
 RUN pip install -r requirements.txt
 #Corremos
 CMD ["script.py"]
