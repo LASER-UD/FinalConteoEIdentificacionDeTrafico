@@ -5,7 +5,11 @@ $(document).ready(function(){
         if(text!==""){
             $.getJSON("http://localhost:3000/entrar", function(data){    
                 if(text === data.codigo){
-                    location.href="http://localhost:3000/Index";
+                    $.getJSON("http://localhost:3000/iniciarSesion", function(data){
+                        if(data.allowAccess){
+                            location.href="http://localhost:3000/Index";
+                        }
+                    });                    
                 }  
                 else{
                     alert('Código incorrecto');

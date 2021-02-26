@@ -4,7 +4,10 @@ services:
   interfaz-web:
     build: ./webPage
     volumes:
-      - ./webPage:/usr/src/app
+      - ./webPage:/usr/src/app      
+      - "/etc/timezone:/etc/timezone:ro"
+      - "/etc/localtime:/etc/localtime:ro"
+
     ports:
       - 3000:3000
     depends_on: 
@@ -14,7 +17,9 @@ services:
   scriptfinal:
     build: ./scriptService
     volumes:
-      - ./scriptService:/usr/src/scriptService
+      - ./scriptService:/usr/src/scriptService      
+      - "/etc/timezone:/etc/timezone:ro"
+      - "/etc/localtime:/etc/localtime:ro"
     devices:
       - /dev/video0:/dev/video0
       - /dev/bus/usb:/dev/bus/usb

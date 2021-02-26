@@ -1,0 +1,83 @@
+body{
+    padding:0;
+    margin:0;    
+}
+nav{   
+    float: left; 
+    height:100vh;
+    width: 25vw;
+    background-color: maroon;     
+    margin: 0;
+    padding: 0;
+}
+.listItem{    
+    color:white;
+    height:10vh;
+    line-height: 10vh;
+    text-align: center;
+    vertical-align: middle;
+    border-bottom: 1px solid white;
+    cursor: pointer;
+}
+.listItem:hover{
+    background-color: rgb(185, 37, 37);
+}
+.listItem span{    
+    display: inline-block;
+    vertical-align: middle;
+    line-height: normal;
+    font-family: Exo-Regular;    
+}
+@font-face{
+    font-family: Exo-Regular;
+    src: url('../fonts/Exo-Regular.otf');
+}
+#logo img{
+    width:70%;
+}
+#logo{
+    position:relative;
+    top: 50vh;
+    text-align: center;
+}
+#main{    
+    position:absolute;
+    left: 25vw;
+    width:75vw;
+    height:100vh;
+}
+.content{
+    width:100%; 
+    padding: 5vh;   
+}
+.content .header{
+    text-align: center;
+    color: maroon;
+    font-size: 10vh;
+    font-family: Exo-ExtraBold;
+}
+@font-face{
+    font-family: Exo-ExtraBold;
+    src: url('../fonts/Exo-ExtraBold.otf');
+}
+#stream{
+    width:100%;   
+    text-align: center; 
+}
+#stream img{
+    width:60%;
+}
+.botonesCentrados{
+    text-align: center;   
+}
+.botonesCentrados input{
+    width:30%;
+    padding: 1% 0 1% 0;
+    background-color: maroon;
+    color: white;
+    border: none;
+}
+.botonesCentrados input:hover{
+    background-color: rgb(185, 37, 37);
+    cursor: pointer;
+}

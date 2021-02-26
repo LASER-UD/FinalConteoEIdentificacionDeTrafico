@@ -8,6 +8,50 @@
         <script src="../scripts/principal.js"></script>
     </head>
     <body>
-        <img src="http://localhost:3500/video_feed"/>
+        <nav>
+            <div class="listItem" id="btnPrincipal">
+                <span>
+                    Principal
+                </span>
+            </div>
+            <div class="listItem" id="btnGraficas">
+                <span>
+                    Gráficas
+                </span>
+            </div>
+            <div class="listItem"  id="btnConfiguracion">
+                <span>
+                    Configuración
+                </span>
+            </div>
+            <div class="listItem"  id="btnSalir">
+                <span>
+                    Salir
+                </span>
+            </div>
+            <div id="logo">
+                <img src="../images/LASER.jpg"/>
+            </div>
+        </nav>
+        <section id="main">
+            <table class="content">
+                <tr>
+                    <td class="header">
+                        Traffic Counter - LASER
+                    </td>
+                </tr>
+                <tr>
+                    <td id="stream">
+                        <img src="http://localhost:3500/video_feed"/>
+                    </td>
+                </tr>
+                <tr class="botonesCentrados">
+                    <td>
+                        <input type="button" style="boton" value="Empezar Sistema" id="btnEmpezar"/>
+                        <input type="button" style="boton" value="Parar Sistema" id="btnParar"/>
+                    </td>
+                </tr>
+            </table>
+        </section>
     </body>
 </html>
