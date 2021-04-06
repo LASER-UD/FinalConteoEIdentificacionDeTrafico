@@ -91,6 +91,8 @@ class trackedVehicle:
         self.velocidad = 0.0   
         self.pasoLinea = False   
         self.color = color
+        self.liveTime = 0
+        self.startTime = time.time()
     def nuevoVehiculo(vehiculo):
         noExiste = True
         for i in trackedVehicle.trackedVehicles:
@@ -254,9 +256,10 @@ def gen_frames():
 
 
             else:
-                if(!start_stream):
+                if(not start_stream):
                     trackedVehicle.trackedVehicles.clear()
                     VehiculosContados = 0
+                lista_temporal = trackedVehicle.trackedVehicles
                 for i in trackedVehicle.trackedVehicles:
                     i.tracker.update(frame_rgb)
                     pos = i.tracker.get_position()                
@@ -274,15 +277,17 @@ def gen_frames():
                     endY = int(pos.bottom())
                     w = endX - startX
                     h = endY - startY
+                    if(i.liveTime > 180):
+                        lista_temporal.remove(i)
                     if(w > resized.shape[1]*0.4 or h > resized.shape[0]*0.4):
-                        trackedVehicle.trackedVehicles.remove(i)
+                        lista_temporal.remove(i)
                     if(Bajando):
                         if(i.centroide[1] > resized.shape[0]*lineaVelocidad and i.pasoLinea == False):
                             i.pasoLinea = True
                             i.tiempoLinea = time.time()
 
-                        if(i.centroide[1]>resized.shape[0]*limite):
-                            trackedVehicle.trackedVehicles.remove(i)                        
+                        if(i.centroide[1]>resized.shape[0]*limite):                            
+                            lista_temporal.remove(i)
                             VehiculosContados+=1
                             fecha = datetime.now()
                             i.velocidad = 3.6*(distanciaVelocidad / (time.time() - i.tiempoLinea))
@@ -303,6 +308,7 @@ def gen_frames():
                             trackedVehicle.trackedVehicles.remove(i)
                             VehiculosContados+=1
                     # draw the bounding box from the correlation object tracker
+                    trackedVehicle.trackedVehicles = lista_temporal
                     cv2.rectangle(frame_copia, (startX, startY), (endX, endY),(0, 255, 0), 2)	                
                     if(i.type == 0):
                         Tipo = "Ambulancia"

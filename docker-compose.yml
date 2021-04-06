@@ -36,6 +36,4 @@ services:
     ports:
       - "6000:27017"
     logging: 
-      driver: none
-
-  
+      driver: none  
