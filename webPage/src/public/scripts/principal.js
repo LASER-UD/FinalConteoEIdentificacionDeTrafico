@@ -17,7 +17,7 @@ $(document).ready(function(){
     $("#btnSalir").click(function(){
         console.log("Clicked");
         $.get("http://localhost:3000/cerrarSesion",function(data){
-            if(data.allowAccess){
+            if(!bolean(data.allowAccess)){
                 location.href="http://localhost:3000";
             }
         });
