@@ -279,7 +279,7 @@ def gen_frames():
                     h = endY - startY
                     if(i.liveTime > 180):
                         lista_temporal.remove(i)
-                    if(w > resized.shape[1]*0.4 or h > resized.shape[0]*0.4):
+                    if(w > resized.shape[1]*0.5 or h > resized.shape[0]*0.5):
                         lista_temporal.remove(i)
                     if(Bajando):
                         if(i.centroide[1] > resized.shape[0]*lineaVelocidad and i.pasoLinea == False):
