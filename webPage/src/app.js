@@ -34,6 +34,7 @@ MongoClient.connect(mongoUrl, (err, db) => {
 });
 
 app.listen(3000);
+app.use(express.json())
 app.set("jsonp callback", true);
 app.use(session({secret: 'ssshhhhh'}));
 app.use(require('./routes/index.routes'));

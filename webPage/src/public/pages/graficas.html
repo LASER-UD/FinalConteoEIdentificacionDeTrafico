@@ -1,0 +1,92 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset='utf-8'/>
+        <title>TCLaser - Principal</title>
+        <link rel="stylesheet" href="../styles/graficas.css" type="text/css"/>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js@3.1.0/dist/chart.min.js"></script>
+        <script src="../scripts/jQuery.js"></script>
+        <script src="../scripts/graficas.js"></script>
+    </head>
+    <body>
+        <nav>
+            <div class="listItem" id="btnPrincipal">
+                <span>
+                    Principal
+                </span>
+            </div>
+            <div class="listItem" id="btnGraficas">
+                <span>
+                    Gráficas
+                </span>
+            </div>
+            <div class="listItem"  id="btnConfiguracion">
+                <span>
+                    Configuración
+                </span>
+            </div>
+            <div class="listItem"  id="btnSalir">
+                <span>
+                    Salir
+                </span>
+            </div>
+            <div id="logo">
+                <img src="../images/LASER.jpg"/>
+            </div>
+        </nav>
+        <section id="main">
+            <table class="content">
+                <tr>
+                    <td class="header" colspan=2>
+                        Traffic Counter - LASER
+                    </td>
+                </tr>
+                <tr>
+                    <td id="grafico">
+                        <canvas id="chartGrafico"></canvas>
+                    </td>
+                    <td id="contGrafico">
+                        <table>
+                            <tr>
+                                <td>Fecha inicio</td>
+                            </tr>
+                            <tr>
+                                <td><input type="date" id="fechaInicio"></td>
+                            </tr>
+                            <tr>
+                                <td>Fecha fin</td>
+                            </tr>
+                            <tr>
+                                <td><input type="date" id="fechaFin"></td>
+                            </tr>
+                            <tr>
+                                <td>Buscar por</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input type="radio" name="buscarPor" value="1" checked="checked">
+                                    <label>Todos</label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input type="radio" name="buscarPor" value="2">
+                                    <label>Tipo</label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input type="radio" name="buscarPor" value="3">
+                                    <label>Color</label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><input type="button" id="btnBuscar" value="Buscar"></td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+        </section>
+    </body>
+</html>

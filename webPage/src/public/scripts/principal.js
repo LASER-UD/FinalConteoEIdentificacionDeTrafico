@@ -16,10 +16,13 @@ $(document).ready(function(){
     });
     $("#btnSalir").click(function(){
         console.log("Clicked");
-        $.get("http://localhost:3000/cerrarSesion",function(data){
-            if(!bolean(data.allowAccess)){
+        $.getJSON("http://localhost:3000/cerrarSesion",function(data){            
+            if(data){
                 location.href="http://localhost:3000";
             }
         });
+    });
+    $("#btnGraficas").click(function(){
+        location.href="http://localhost:3000/graficos";
     });
 });
